@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui" >
+        
+    
+    <h:body>
+    
+     <h:head>
+     
+     <title>Mon projet</title>
+    
+  
+  </h:head>  
+    
+    <h:form>
+    
+    <p:fieldset id="enteteconnexion" legend="Inserer un produit">
+    
+	    <p:outputLabel for="login" value="Id produit : " />
+	    <p:inputText id="login" label="login" value="#{helloWorldBean.produit.idprod}" />
+	    
+	    <br></br>
+	    <br></br>
+	    
+	    <p:outputLabel for="cdeprod" value="Code produit : " />
+	    <p:inputText id="cdeprod" label="cdeprod" value="#{helloWorldBean.produit.codeproduit}"  />
+	    
+	    <br></br>
+	    <br></br>
+	    
+	    <p:outputLabel for="nom" value="Nom : " />
+	    <p:inputText id="nom" label="nom" value="#{helloWorldBean.produit.nom}" />
+	    
+	    
+    </p:fieldset>
+    
+    <p:commandButton type="submit" value="Valider"  action="#{helloWorldBean.create()}"  />
+    
+    
+    </h:form>
+    
+   
+    
+
+    
+    
+    
+</h:body>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </html>

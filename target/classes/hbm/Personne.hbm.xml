@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 1 juil. 2019 11:23:46 by Hibernate Tools 5.4.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hbm.Personne" optimistic-lock="version" schema="public" table="personne">
+        <id name="idpers" type="int">
+            <column name="idpers"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="prenom" type="string">
+            <column length="254" name="prenom"/>
+        </property>
+        <property name="nom" type="string">
+            <column length="254" name="nom"/>
+        </property>
+        <property name="login" type="string">
+            <column length="254" name="login"/>
+        </property>
+        <property name="motdepase" type="string">
+            <column length="254" name="motdepase"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="clients" table="client">
+            <key>
+                <column name="idpers" not-null="true"/>
+            </key>
+            <one-to-many class="hbm.Client"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="commercants" table="commercant">
+            <key>
+                <column name="idpers" not-null="true"/>
+            </key>
+            <one-to-many class="hbm.Commercant"/>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="administrateurs" table="administrateur">
+            <key>
+                <column name="idpers" not-null="true"/>
+            </key>
+            <one-to-many class="hbm.Administrateur"/>
+        </set>
+    </class>
+</hibernate-mapping>

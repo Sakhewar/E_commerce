@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui" >
+    
+<h:body>
+
+<h:head>
+<title>Modification produit</title>
+</h:head>
+
+<h2>UPDATE USER</h2>
+<h:form>
+<h:inputText value="#{helloWorldBean.produit.idprod}"/><br/>
+<h:inputText value="#{helloWorldBean.produit.codeproduit}"/><br/>
+<h:inputText value="#{helloWorldBean.produit.nom}"/><br/>
+<h:commandButton value="Update" action="#{helloWorldBean.update()}"/>
+</h:form>
+
+
+
+</h:body>
+</html>

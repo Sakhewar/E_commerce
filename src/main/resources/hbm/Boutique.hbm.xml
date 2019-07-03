@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 1 juil. 2019 11:23:46 by Hibernate Tools 5.4.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hbm.Boutique" optimistic-lock="version" schema="public" table="boutique">
+        <id name="idbout" type="int">
+            <column name="idbout"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="hbm.Commercant" fetch="select" name="commercant">
+            <column name="idpers" not-null="true"/>
+            <column name="idcom" not-null="true"/>
+        </many-to-one>
+        <property name="codebout" type="java.lang.Integer">
+            <column name="codebout"/>
+        </property>
+        <property name="nom" type="java.lang.Integer">
+            <column name="nom"/>
+        </property>
+    </class>
+</hibernate-mapping>

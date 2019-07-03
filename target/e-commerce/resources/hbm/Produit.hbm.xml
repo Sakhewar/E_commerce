@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 1 juil. 2019 11:23:46 by Hibernate Tools 5.4.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="entities.Produit" optimistic-lock="version" schema="public" table="produit">
+        <id name="idprod" type="int">
+            <column name="idprod"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="codeproduit" type="java.lang.Integer">
+            <column name="codeproduit"/>
+        </property>
+        <property name="nom" type="java.lang.Integer">
+            <column name="nom"/>
+        </property>
+    </class>
+</hibernate-mapping>

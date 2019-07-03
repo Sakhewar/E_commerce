@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 1 juil. 2019 11:23:46 by Hibernate Tools 5.4.2.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="hbm.Client" optimistic-lock="version" schema="public" table="client">
+        <composite-id class="hbm.ClientId" name="id">
+            <key-property name="idpers" type="int">
+                <column name="idpers"/>
+            </key-property>
+            <key-property name="idclient" type="int">
+                <column name="idclient"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="hbm.Personne" fetch="select" insert="false" name="personne" update="false">
+            <column name="idpers" not-null="true"/>
+        </many-to-one>
+        <property name="code" type="java.lang.Integer">
+            <column name="code"/>
+        </property>
+    </class>
+</hibernate-mapping>

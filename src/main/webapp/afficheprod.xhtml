@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui" >
+    
+<h:body>
+
+<h:head>
+<title>Affichage produit</title>
+ 
+</h:head>
+
+<h:form>
+
+<!-- lst is the result of getLst in managedBean-->
+<p:dataTable value="#{helloWorldBean.affiche()}" var="u" cellspacing="7px" border="1" style="border-collapse: collapse">
+	<p:column style="font-size:10pt ; ">
+	<f:facet name="header">ID PRODUIT</f:facet>
+	#{u.idprod}
+	</p:column>
+	
+	<p:column style="font-size:10pt ; ">
+	<f:facet name="header">CODE PRODUIT</f:facet>
+	#{u.codeproduit}
+	</p:column>
+	
+	<p:column style="font-size:10pt ; ">
+	<f:facet name="header">NOM</f:facet>
+	#{u.nom}
+	</p:column>
+	
+	<p:column>
+<f:facet name="header">Action</f:facet>
+<h:commandLink value="Supprimer" action="#{helloWorldBean.delete(u)}" onclick="return confirm('Etes Vous Sure ?')"/>
+| <h:commandLink value="Modifier" action="#{helloWorldBean.edit(u.idprod)}" />
+</p:column>
+
+</p:dataTable>
+
+</h:form>
+
+
+</h:body>
+    
+    
+    
+    
+    
+    
+    
+    </html>
